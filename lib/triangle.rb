@@ -33,9 +33,7 @@ class Triangle
   end
 
   def kind
-    if self.side_one + self.side_three < self.side_two
-        raise TriangleError
-    elsif self.side_one == 0 && self.side_two == 0 && self.side_three == 0
+    if self.side_one == 0 && self.side_two == 0 && self.side_three == 0
         raise TriangleError
     elsif self.side_one < 0 || self.side_two < 0 || self.side_three < 0
         raise TriangleError
@@ -45,6 +43,8 @@ class Triangle
       return :isosceles
     elsif self.side_one != self.side_two && self.side_one != self.side_three && self.side_three != self.side_one
       return :scalene
+    elsif self.side_one + self.side_three > self.side_two
+        raise TriangleError
     end
     # begin
     #   raise TriangleError
