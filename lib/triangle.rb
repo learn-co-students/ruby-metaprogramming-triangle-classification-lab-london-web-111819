@@ -43,16 +43,19 @@ class Triangle
       return :isosceles
     elsif self.side_one != self.side_two && self.side_one != self.side_three && self.side_three != self.side_one
       return :scalene
-    elsif self.side_one + self.side_three > self.side_two
-        raise TriangleError
+    # elsif self.side_one + self.side_three > self.side_two || self.side_one + self.side_two > self.side_three
+    #     raise TriangleError
     end
+  end
+end
+
+
+
+# binding.pry
+# 'Start'
+
     # begin
     #   raise TriangleError
     # rescue TriangleError => error
     #   puts error.message
     # end
-  end
-end
-
-# binding.pry
-# 'Start'
